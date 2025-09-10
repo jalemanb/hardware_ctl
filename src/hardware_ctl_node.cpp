@@ -20,7 +20,7 @@ public:
           last_float_msg_time_(this->now())
     {
         candidates_sub_ = this->create_subscription<person_detection_msgs::msg::CandidateArray>(
-            "/image_detections", 10,
+            "image_detections", 10,
             std::bind(&MultifacetedCameraTiltController::poseCallback, this, std::placeholders::_1));
 
         control_timer_ = this->create_wall_timer(
